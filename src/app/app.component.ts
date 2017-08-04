@@ -87,6 +87,11 @@ export class AppComponent {
   }
 
   private openAdminDialog() {
-    this.dialog.open(DialogComponent);
+    this.dialog.open(DialogComponent).afterClosed()
+      .filter(result => !!result)
+      .subscribe(user => {
+        this.users.push(user);
+        this.selectedUser = user;
+      });
   }
 }
