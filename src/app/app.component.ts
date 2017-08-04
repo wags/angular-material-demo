@@ -71,6 +71,7 @@ export class AppComponent {
   ];
 
   selectedUser = this.users[0];
+  isDarkTheme = false;
 
   constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
     // To avoid XSS attacks, the URL needs to be trusted from inside of your application.
